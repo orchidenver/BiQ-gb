@@ -5,7 +5,6 @@ import Button from "../components/Button";
 import TextBlock from "../components/TextBlock";
 import ImgComponent from "../components/ImgComponent";
 import Composition from "../components/Composition";
-import { useAppContext } from "../context/context";
 import { Helmet } from "react-helmet";
 
 import "./MainPage.css";
@@ -16,8 +15,6 @@ import logo from "../assets/logo.jpg";
 import promo from "../assets/promo.jpg";
 
 export default function MainPage() {
-  const { lang } = useAppContext();
-
   return (
     <>
       <Helmet>
@@ -32,87 +29,70 @@ export default function MainPage() {
         <div className="moto">
           <h1
             style={{
-              width: lang === "ENG" ? 195 : 290,
+              width: 195,
             }}
           >
-            {lang === "ENG" ? "BE QUALITY WATER" : "BĄDŹ JAKOŚCIOWĄ WODĄ"}
+            BE QUALITY WATER
           </h1>
         </div>
         <ImgComponent link={promo} altText="promo" banner={false} />
         <Divider />
-        <TextBlock
-          header={
-            lang === "ENG" ? "Distilled from nature" : "Destylowana z natury"
-          }
-          element="DIV"
-        >
+        <TextBlock header="Distilled from nature" element="DIV">
           {
             <>
               <p className="list-block-paragraph">
-                {lang === "ENG"
-                  ? "Humanity is rethinking the way we live. In a complex age, we strive for pure simplicity in our mental and physical health. This return to essentials applies to our planet, too. We can only improve our world by preserving the essential beauty that already exists in nature. Still water is essential because:"
-                  : "Ludzkość przemyślała sposób naszego życia. W czasach pełnych złożoności, dążymy do czystej prostoty dla naszego zdrowia mentalnego i fizycznego. Ten powrót do podstaw odnosi się także do naszej planety. Możemy poprawić nasz świat tylko poprzez zachowanie esencjonalnego piękna, które już istnieje w naturze."}
+                Humanity is rethinking the way we live. In a complex age, we
+                strive for pure simplicity in our mental and physical health.
+                This return to essentials applies to our planet, too. We can
+                only improve our world by preserving the essential beauty that
+                already exists in nature. Still water is essential because:
               </p>
               <ul>
                 <li>
-                  {lang === "ENG"
-                    ? "Quality of drinking water affects all parts of human existence."
-                    : "Jakość wody pitnej wpływa na wszystkie aspekty istnienia człowieka."}
+                  Quality of drinking water affects all parts of human
+                  existence.
                 </li>
+                <li>Still water is balanced correctly for natural being.</li>
                 <li>
-                  {lang === "ENG"
-                    ? "Still water is balanced correctly for natural being."
-                    : "Woda niegazowana jest odpowiednio zrównoważona dla naturalnego bytu."}
-                </li>
-                <li>
-                  {lang === "ENG"
-                    ? "Still water is enriched with the purity of deep sources."
-                    : "Woda niegazowana jest wzbogacona czystością głębokich źródeł."}
+                  Still water is enriched with the purity of deep sources.
                 </li>
               </ul>
               <p className="list-block-paragraph">
-                {lang === "ENG"
-                  ? "Get closer to your original natural state with still water bottled straight from the source."
-                  : "Zbliż się do swojego pierwotnego stanu naturalnego dzięki wodzie niegazowanej butelkowanej prosto z źródła."}
+                Get closer to your original natural state with still water
+                bottled straight from the source.
               </p>
             </>
           }
         </TextBlock>
         <Divider />
-        <TextBlock
-          header={
-            lang === "ENG" ? "All in one bottle" : "Wszystko w jednej butelce"
-          }
-        >
-          {lang === "ENG"
-            ? "One bottle. Nothing but still water inside. And when you know the source, you taste the purity even more. From the very beginning, we use only specially-selected sources of pure water. Then with science, we recreate water cycle as it occurs all over our earth. Throughout the entire process — producing glass bottles, designing distribution lines, even crafting packaging — we ensure the highest quality, bringing purity from nature right to you."
-            : "Jedna butelka. W środku tylko woda niegazowana. A kiedy znasz jej źródło, smak czystości staje się jeszcze bardziej wyraźny. Już od samego początku korzystamy tylko z specjalnie wybranych źródeł czystej wody. Następnie, przy użyciu nauki, odtwarzamy cykl wody, tak jak zachodzi to na całej naszej planecie. Przez cały proces - produkcję szklanych butelek, projektowanie linii dystrybucji, nawet tworzenie opakowań - zapewniamy najwyższą jakość, przynosząc czystość prosto z natury do Ciebie."}
+        <TextBlock header="All in one bottle">
+          One bottle. Nothing but still water inside. And when you know the
+          source, you taste the purity even more. From the very beginning, we
+          use only specially-selected sources of pure water. Then with science,
+          we recreate water cycle as it occurs all over our earth. Throughout
+          the entire process — producing glass bottles, designing distribution
+          lines, even crafting packaging — we ensure the highest quality,
+          bringing purity from nature right to you.
         </TextBlock>
         <ImgComponent link={productImg} altText="water" banner={false} />
-        <TextBlock
-          header={lang === "ENG" ? "Glass container" : "Szklany pojemnik"}
-        >
-          {lang === "ENG"
-            ? "The glass bottle is environmentally friendly and preserves the temperature and natural taste of the water inside. The shape of the bottle is inspired by a moment of purity: when you see your own refection on the water's rippled surface."
-            : "Szklana butelka jest przyjazna dla środowiska i zachowuje temperaturę oraz naturalny smak wody wewnątrz. Kształt butelki został zainspirowany momentem czystości: gdy widzisz swoje odbicie na zmarszczonym powierzchni wody."}
+        <TextBlock header="Glass container">
+          The glass bottle is environmentally friendly and preserves the
+          temperature and natural taste of the water inside. The shape of the
+          bottle is inspired by a moment of purity: when you see your own
+          refection on the water's rippled surface.
         </TextBlock>
         <Divider />
-        <TextBlock
-          header={lang === "ENG" ? "Stone bottle cap" : "Zrównoważone detale"}
-        >
-          {lang === "ENG"
-            ? "The stone bottle cap ensures sustainable use, evokes a sense of harmony, and gives the feeling of being alone in the middle of nature — totally balanced, just still water and you."
-            : "Korek z kamienia zapewnia zrównoważone użytkowanie, wywołuje poczucie harmonii i daje uczucie samotności pośrodku natury - całkowicie zbalansowanej, tylko ty i woda."}
+        <TextBlock header="Stone bottle cap">
+          The stone bottle cap ensures sustainable use, evokes a sense of
+          harmony, and gives the feeling of being alone in the middle of nature
+          — totally balanced, just still water and you.
         </TextBlock>
         <Divider />
-        <TextBlock
-          header={
-            lang === "ENG" ? "Sustainable details" : "Zrównoważone detale"
-          }
-        >
-          {lang === "ENG"
-            ? "When water, glass, and stone come together, we only need one additional detail: a tamper-evident sticker to ensure your water is untouched. The sticker on the bottle is made of tyvek paper, so the whole bottle is recyclable and environmentally friendly."
-            : "Kiedy woda, szkło i kamień łączą się, potrzebujemy tylko jednego dodatkowego detalu: plomby gwarantującej, że Twoja woda jest nietknięta. Plomba na butelce wykonana jest z papieru tyvek, dzięki czemu cała butelka jest nadająca się do recyklingu i przyjazna dla środowiska."}
+        <TextBlock header="Sustainable details">
+          When water, glass, and stone come together, we only need one
+          additional detail: a tamper-evident sticker to ensure your water is
+          untouched. The sticker on the bottle is made of tyvek paper, so the
+          whole bottle is recyclable and environmentally friendly.
         </TextBlock>
         <ImgComponent link={productImg2} altText="water" banner={false} />
         <div className="product-section">
@@ -120,26 +100,22 @@ export default function MainPage() {
             <span
               className="product-info-item bold"
               style={{
-                fontSize: lang === "ENG" ? 20 : 16,
+                fontSize: 20,
               }}
             >
-              {lang === "ENG" ? "Still water" : "Woda Bezgazowa"}
+              Still water
             </span>
             <span
               className="product-info-item gray"
               style={{
-                fontSize: lang === "ENG" ? 20 : 16,
+                fontSize: 20,
               }}
             >
               0.3/0.7/1L
             </span>
           </div>
-          <Button
-            height={50}
-            fontSize={lang === "ENG" ? 20 : 16}
-            width={lang === "ENG" ? "40vw" : "45vw"}
-          >
-            {lang === "ENG" ? "More info" : "Dodatkowo"}
+          <Button height={50} fontSize={20} width="40vw">
+            More info
           </Button>
         </div>
         <ImgComponent link={logo} altText="logo" banner={false} />

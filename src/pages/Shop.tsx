@@ -20,7 +20,6 @@ export default function Shop() {
     decreaseBottle,
     openCart,
     changePrice,
-    lang,
   } = useAppContext();
 
   return (
@@ -32,10 +31,8 @@ export default function Shop() {
       <main>
         <Banner />
         <section className="shop">
-          <p className="shop-head">{lang === "ENG" ? "STILL" : "WODA"}</p>
-          <p className="shop-head">
-            {lang === "ENG" ? "WATER" : "NIEGAZOWANA"}
-          </p>
+          <p className="shop-head">STILL</p>
+          <p className="shop-head">WATER</p>
           <div className="capacity-btns">
             <button
               className={`${
@@ -91,10 +88,8 @@ export default function Shop() {
           </div>
           <div className="shop-items">
             <div className="shop-item">
-              <p className="shop-product">
-                {lang == "ENG" ? "Bottle" : "Butelka"}
-              </p>
-              <p className="shop-price">{`${bottles.price} zł`}</p>
+              <p className="shop-product">Bottle</p>
+              <p className="shop-price">{`${bottles.price} £`}</p>
               <div className="shop-count">
                 <button
                   type="button"
@@ -116,13 +111,11 @@ export default function Shop() {
             <Divider color="#000000" margin="20px 0" />
             <div className="shop-item">
               <p className="shop-product">
-                {lang === "ENG" ? "Box" : "Opakowanie "}
+                Box
                 <br />
-                <span className="currency">
-                  (9 {lang === "ENG" ? "pcs" : "szt."})
-                </span>
+                <span className="currency">(9 pcs)</span>
               </p>
-              <p className="shop-price">{`${boxes.price} zł`}</p>
+              <p className="shop-price">{`${boxes.price} £`}</p>
               <div className="shop-count">
                 <button
                   type="button"
@@ -144,8 +137,8 @@ export default function Shop() {
           </div>
           <button className="cart-btn" onClick={openCart}>
             <div className="cart-btn-items">
-              <span>{`${totalCartSum.toFixed(1)} zł`}</span>
-              <span>{lang === "ENG" ? "Add to cart" : "Dodaj do koszyka"}</span>
+              <span>{`${totalCartSum.toFixed(1)} £`}</span>
+              <span>Add to cart</span>
             </div>
           </button>
         </section>

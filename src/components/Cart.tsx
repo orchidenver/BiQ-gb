@@ -19,7 +19,6 @@ export default function Cart({ open }: CartProps) {
     increaseBox,
     decreaseBox,
     decreaseBottle,
-    lang,
   } = useAppContext();
   const [openModal, setOpenModal] = useState<boolean>(false);
 
@@ -38,9 +37,7 @@ export default function Cart({ open }: CartProps) {
             </section>
             <section className="product-info">
               <div className="product-desc">
-                <p className="product-name">
-                  {lang === "ENG" ? "Bottle" : "Butelka"}
-                </p>
+                <p className="product-name">Bottle</p>
                 <p className="product-capacity">{`${bottles.capacity}L`}</p>
               </div>
               <div className="product-quantity">
@@ -64,7 +61,7 @@ export default function Cart({ open }: CartProps) {
             <section className="product-actions">
               <p className="product-price">{`${bottles.totalSum.toFixed(
                 1
-              )} zł`}</p>
+              )} £`}</p>
               <button
                 className="product-remove"
                 onClick={() => removeItem("bottles")}
@@ -85,15 +82,7 @@ export default function Cart({ open }: CartProps) {
             <section className="product-info">
               <div className="product-desc">
                 <p className="product-name">
-                  {lang === "ENG" ? (
-                    <span>Box 9pcs</span>
-                  ) : (
-                    <>
-                      <span>Opakowanie</span>
-                      <br />
-                      <span>9szt.</span>
-                    </>
-                  )}
+                  <span>Box 9pcs</span>
                 </p>
                 <p className="product-capacity">{`${boxes.capacity}L`}</p>
               </div>
@@ -118,7 +107,7 @@ export default function Cart({ open }: CartProps) {
             <div className="product-actions">
               <p className="product-price">{`${boxes.totalSum.toFixed(
                 1
-              )} zł`}</p>
+              )} £`}</p>
               <button
                 className="product-remove"
                 onClick={() => removeItem("boxes")}
@@ -131,9 +120,9 @@ export default function Cart({ open }: CartProps) {
         </>
       ) : null}
       <div className="checkout">
-        <div className="checkout-summary">{`${
-          lang === "ENG" ? "Place an order" : "Złóż zamówienie"
-        } ${totalCartSum.toFixed(1)} zł`}</div>
+        <div className="checkout-summary">{`Place an order ${totalCartSum.toFixed(
+          1
+        )} £`}</div>
         <button
           className="checkout-btn"
           onClick={() => {
@@ -141,7 +130,7 @@ export default function Cart({ open }: CartProps) {
           }}
           disabled={bottles.quantity === 0 && boxes.quantity === 0}
         >
-          {lang === "ENG" ? "Checkout" : "Przejdź do kasy"}
+          Checkout
         </button>
       </div>
       <Modal open={openModal} onClose={() => setOpenModal(false)} />
